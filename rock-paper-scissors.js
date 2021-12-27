@@ -1,71 +1,56 @@
-let randomNumber = Math.random();
-let loseMessage = "Sorry, you lost! Computer receives 1 point";
-let winMessage = "Congratulations, you won! You get 1 point";
-let drawMessage = "It's a draw!";
-let rockMessage = 'Computer chose Rock';
-let paperMessage = 'Computer chose Paper';
-let scissorsMessage = 'Computer chose Scissors';
+const options = document.querySelectorAll(".options");
 
-const submitSelection = document.getElementById('.submitSelection');
+options.forEach(option=>{
+    option.addEventListener("click" , function(){
+        const pInput = this.textContent;
 
-function getInputValue(){
-let lowerCase = document.getElementById('myInput').value;
-let playerSelection = lowerCase.toLowerCase();
-}
-console.log(getInputValue());
+        const cOptions = ["Rock", "Paper", "Scissors"];
+        const cInput = cOptions[Math.floor(Math.random()* 3 ) ];
+        console.log(cInput);
 
-let computerPlay = Math.random();
-console.log(computerPlay);
-if (computerPlay < 0.34) {
-    computerPlay = "rock";
-}
-else if (computerPlay < 0.67) {
-    computerPlay = "paper";
-}
-else if (computerPlay < 0.99) {
-    computerPlay = "scissors";
+        compareInputs(pInput, cInput);
+
+    })
 }
 
+)
 
-console.log(computerPlay);
+function compareInputs (pInput, cInput){
 
-function playerResults (playerSelection) {
-    if (playerSelection==="rock") {
-        return "rock";
-    } 
-    else if (playerSelection==="paper") {
-        return "paper";
+const currentMatch = '${pInput} vs ${cInput}';
+// tie check
+    if (pInput === cInput){
+        alert ('${currentMatch} is a tie!');
+        return;
     }
-    else if (playerSelection==="scissors") {
-        return "scissors";
+// rock win check
+else if (pInput === 'Rock') {
+    if (cInput === 'Scissors') {
+        alert ('${currentMatch} = You win!');
+    } else {
+        alert ('${currentMatch} = You lost');
     }
-    else return ("Invalid input. Please try again");
-}
-
-console.log(playerResults());
-function gamePlay (playerResults, computerPlay){
-    if (playerResults === computerPlay) {
-        return (drawMessage);
-    } else if (playerResults === rock) {
-        if (computerPlay === scissors) { 
-            return "Rock beats scissors! You win!";
-        }
-        else return "Paper beats rock! You lose";
-    }
-    else if (playerResults === paper) {
-        if (computerPlay === rock) {
-            return "Paper beats rock! You win!";
-        }
-        else return "Scissors beats paper! You lose";
-    }
-    else if (playerResults === scissors) {
-        if (computerPlay === paper) {
-            return "Scissors beats paper! You win!";
-        }
-        else return "Rock beats scissors! You lose";
+} 
+// paper win check
+else if (pInput === 'Paper'){
+    if (cInput === 'Rock'){
+        alert ('${currentMatch} = You win!');
+    } else {
+        alert ('${currentMatch} = You lost');
     }
 }
-console.log(gamePlay());
+//scissors win check
+else if (pInput === 'Scissors'){
+    if (cInput === 'Paper'){
+        alert ('${currentMatch} = You win!');
+    } else {
+        alert ('${currentMatch} = You lost');
+    }
+}
+}
+
+console.log(compareInputs());
+
 
 
 
