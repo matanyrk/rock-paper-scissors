@@ -4,8 +4,6 @@
 <meta charset="UTF-8"/>
 </head>
 <body>
-    /* This part allows user to choose between rock paper and scissors */
-
     <div class="input">
         <p>Welcome! Please select either Rock, Paper, or Scissors!</p>
 <button class="options">Rock</button>
@@ -13,7 +11,20 @@
 <button class="options">Scissors</button>    
 </div>
     <div class="score">
+     
+        Rounds Played:   <span id="gameScore"></span>
 
+<div class = "scorboard">
+    <div class ="playerscore">
+        Player: <span id="pScore"></span>
+    </div>
+    <div class = "computerscore">
+        Computer: <span id="cScore"></span>
+    </div>
+    <div class = "ties">
+        Ties: <span id="tieScore"></span>
+    </div>
+</div>
     </div>
 </body>
 <script src="rock-paper-scissors.js"></script>
