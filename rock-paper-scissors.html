@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 <meta charset="UTF-8"/>
 </head>
 <body>
     <div class="input">
         <p>Welcome! Please select either Rock, Paper, or Scissors!</p>
+        <div id="gamecontainer">
 <button class="options">Rock</button>
 <button class="options">Paper</button>
 <button class="options">Scissors</button>    
@@ -24,8 +26,16 @@
     <div class = "ties">
         Ties: <span id="tieScore"></span>
     </div>
+    <div class ="playerRounds">
+        Player Rounds Won: <span id ="pRounds"></span>
+    </div>
+    <div class = "computerRounds">
+        Computer Rounds Won: <span id ="cRounds"></span>
+    </div>
 </div>
     </div>
+</div>
+</div>
 </body>
 <script src="rock-paper-scissors.js"></script>
 </html>
