@@ -63,7 +63,7 @@ function compareInputs (pInput, cInput){
 
 // reset score after player or cpu wins 5 games
 if (pScore === 5) {
-    alert ('Congratulations! You won!');
+    alert ('Congratulations buddy! You won!');
     pScore = 0;
     cScore = 0;
     tieScore = 0;
